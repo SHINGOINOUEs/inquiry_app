@@ -1,24 +1,43 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+開発言語
+.Ruby 3.0.1
+.Rails 6.1.6
 
-Things you may want to cover:
+就業Termの技術
+.device
+.お気に入り機能
 
-* Ruby version
+カリキュラム外の機能
+.ransack
 
-* System dependencies
+実行手順
+$ git clone git@github.com.inquiry_app.git 
+$ cd inquiry_app
+$ bundle install
+$ rails db:create　＆ rails db:migrate　　
+$ rails s
 
-* Configuration
 
-* Database creation
+チェックリスト
+https://docs.google.com/spreadsheets/d/1HOT-Qt60_4WtZlj8Pb_SSGUF0qw5N3kESIUI6R1DZAU/edit?usp=sharing
 
-* Database initialization
+カタログ設計
+https://docs.google.com/spreadsheets/d/11hLNPX9mCzC8NLEPLJH4h-WENVOrbzmmGHxpgFd316g/edit?usp=sharing
 
-* How to run the test suite
+テーブル定義書
+https://docs.google.com/spreadsheets/d/11hLNPX9mCzC8NLEPLJH4h-WENVOrbzmmGHxpgFd316g/edit?usp=sharing
 
-* Services (job queues, cache servers, search engines, etc.)
+ワイヤーフレーム
+https://cacoo.com/diagrams/MBZPi7RXs6drrlJh/7C6AB
 
-* Deployment instructions
+ER図
+https://cacoo.com/diagrams/2W8UGdS7k158pCDp/2C60F
 
-* ...
+<img width="730" alt="image" src="https://user-images.githubusercontent.com/117246362/224276339-eaa881aa-4fba-463a-af69-b7662c84aa36.png">
+
+画面遷移図
+https://cacoo.com/diagrams/0QCKPJ9xqBjRtZv3/45163
+
+<img width="978" alt="image" src="https://user-images.githubusercontent.com/117246362/224276904-3c87e681-4708-4b7f-a579-9a70d7b082f7.png">
+
