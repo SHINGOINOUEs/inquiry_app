@@ -43,7 +43,7 @@ ER図
 -----------------------------------------------------------------
 https://cacoo.com/diagrams/2W8UGdS7k158pCDp/2C60F
 
-<img width="906" alt="image" src="https://user-images.githubusercontent.com/117246362/224520318-0e8d216a-c654-41cf-8eb8-796c5ba0e8ec.png">
+<img width="873" alt="image" src="https://user-images.githubusercontent.com/117246362/224537100-f86cb134-30b2-44bc-98ad-7355313a1cfe.png">
 
 画面遷移図
 -----------------------------------------------------------------
