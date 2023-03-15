@@ -7,7 +7,8 @@
       <th>No</th>
       <th>カテゴリー</th>
       <th>タイトル</th>
-      <th>内容</th>      
+      <th>内容</th>
+      <th>ステータス</th>            
     </tr>
   </thead>
   <tbody>
@@ -17,7 +18,10 @@
         <td><%= question.category.name %></td>
         <td><%= question.title %></td>
         <td><%= question.content %></td>
+        <td><%= question.status ? "終了" : "受付中" %></td>        
       </tr>                                    
     <% end %>      
   </tbody>    
-</table>  
+</table>
+
+<%= link_to '新たに質問する', new_question_path %>
