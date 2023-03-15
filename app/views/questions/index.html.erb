@@ -1,0 +1,23 @@
+
+<h1>質問一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>カテゴリー</th>
+      <th>タイトル</th>
+      <th>内容</th>      
+    </tr>
+  </thead>
+  <tbody>
+    <% @questions.each_with_index do |question, index| %>        
+      <tr>
+        <td><%= index + 1 %></td>  
+        <td><%= question.category.name %></td>
+        <td><%= question.title %></td>
+        <td><%= question.content %></td>
+      </tr>                                    
+    <% end %>      
+  </tbody>    
+</table>  
