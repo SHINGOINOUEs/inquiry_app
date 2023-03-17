@@ -35,10 +35,3 @@ class AnswersController < ApplicationController
     params.require(:answer).permit(:content, :user_id)
   end
 end
-
-
-
-
-
-
-end
