@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
+  
+  patch 'questions/:id/close', to: 'questions#close', as: 'close_question'
+
 end
+
+
 
 
