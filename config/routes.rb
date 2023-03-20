@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   
   patch 'questions/:id/close', to: 'questions#close', as: 'close_question'
 
+  resources :users
+  namespace :admin do
+    resources :users
+  end
+
+
 end
 
 
