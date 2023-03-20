@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  root 'home#index'    
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  root 'home#index'  
   devise_for :users
   resources :questions do
     resources :answers
@@ -13,10 +13,10 @@ Rails.application.routes.draw do
   patch 'questions/:id/close', to: 'questions#close', as: 'close_question'
 
   resources :users
+  
   namespace :admin do
     resources :users, only: [:index, :show]
   end
-
 
 end
 
