@@ -15,12 +15,13 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(question_params)
+    @question = current_user.questions.build(question_params)
     if @question.save
-      redirect_to @question
+      redirect_to @question, notice: "質問を投稿しました。"
     else
-      render 'new'
+      render :new
     end
+
   end  
 
   def edit
@@ -44,7 +45,7 @@ class QuestionsController < ApplicationController
 
   private
     def question_params
-      params.require(:question).permit(:title, :body)
+      params.require(:question).permit(:category_id, :title, :content)
     end  
 
 end
