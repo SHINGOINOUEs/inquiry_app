@@ -4,6 +4,9 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
+
+    @q = Question.ransack(params[:q])
+    @questions = @q.result(distinct: true)
   end
 
   def show
@@ -44,8 +47,13 @@ class QuestionsController < ApplicationController
   end
 
   private
-    def question_params
-      params.require(:question).permit(:category_id, :title, :content)
-    end  
+
+  def set_question
+    @question = Question.find(params[:id])
+  end  
+
+  def question_params
+    params.require(:question).permit(:category_id, :title, :content)
+  end  
 
 end

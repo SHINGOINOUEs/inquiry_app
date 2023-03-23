@@ -1,6 +1,14 @@
 
 <h1>質問一覧</h1>
 
+<%= search_form_for @q do |f| %>
+  <%= f.label :title_cont, "Title" %>
+  <%= f.search_field :title_cont %>
+  <%= f.label :content_cont, "Content" %>
+  <%= f.search_field :content_cont %>
+  <%= f.submit "Search" %>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -8,9 +16,7 @@
       <th>カテゴリー</th>
       <th>タイトル</th>
       <th>内容</th>
-      <th>ステータス</th>
-      <th>お気に入りに追加済み</th>
-      <th>役に立った</th>           
+      <th>ステータス</th>       
       <th>質問詳細ページ</th>                
     </tr>
   </thead>
@@ -21,9 +27,7 @@
         <td><%= question.category.name %></td>
         <td><%= question.title %></td>
         <td><%= question.content %></td>
-        <td><%= question.status ? "終了" : "受付中" %></td>
-        <td><%= question.favorited ? "お気に入りに追加済み" : "" %></td>
-        <td><%= question.useful ? "役に立った" : "" %></td>        
+        <td><%= question.status ? "終了" : "受付中" %></td>       
         <td><%= link_to 'Show', question %></td>                
       </tr>                                    
     <% end %>      
