@@ -2,8 +2,14 @@ class AnswersController < ApplicationController
   before_action :set_question, only: [:create, :edit, :update, :destroy]  
 
   def create
-    @answer = @question.answers.create(answer_params)
-    redirect_to @question
+    @answer = @question.answers.build(answer_params)
+    @answer.user = current_user
+    if @answer.save
+      redirect_to @question, notice: "回答を投稿しました。"
+    else
+      render :new
+    end
+
   end
 
   def edit
