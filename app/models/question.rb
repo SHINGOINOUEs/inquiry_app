@@ -11,4 +11,8 @@ class Question < ApplicationRecord
     %w[title content]
   end
 
+  def favorited?(user)
+    favorites.find_by(user_id: user.id).present?
+  end
+
 end

@@ -21,6 +21,21 @@
   <%= link_to "終了する", close_question_path(@question), method: :patch, class: "btn btn-primary" %>
 <% end %>
 
+<% if user_signed_in? %>
+  <% if @question.favorited?(current_user) %>
+    <%= form_for(current_user.favorites.find_by(question_id: @question.id),
+                html: { method: :delete },
+                url: favorite_path(current_user.favorites.find_by(question_id: @question.id))) do |f| %>
+      <%= f.submit "お気に入りから外す", class: "btn btn-danger" %>
+    <% end %>
+  <% else %>
+    <%= form_with(url: favorites_path(question_id: @question.id)) do |f| %>
+      <%= f.hidden_field :question_id, value: @question.id %>
+      <%= f.submit "お気に入りに登録する", class: "btn btn-primary" %>
+    <% end %>
+  <% end %>
+<% end %>
+
 <h3>回答を投稿する</h3>
 <%= form_with(model: [ @question, @question.answers.build ], local: true) do |form| %>
   <% if @question.errors.any? || @question.answers.any? { |a| a.errors.any? } %>  
