@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user! 
 
   def index
-    @questions = Question.all
+    @questions = Question.all.includes(:user)
 
     @q = Question.ransack(params[:q])
     @questions = @q.result(distinct: true)
@@ -11,6 +11,9 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @answers = @question.answers.includes(:user)
+    @answer = Answer.new
+    @current_user = current_user    
   end
 
   def new
