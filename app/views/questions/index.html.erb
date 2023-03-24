@@ -16,8 +16,9 @@
       <th>カテゴリー</th>
       <th>タイトル</th>
       <th>内容</th>
-      <th>ステータス</th>       
-      <th>質問詳細ページ</th>                
+      <th>ステータス</th>  
+      <th>お気に入り</th>              
+      <th>質問詳細ページ</th>                            
     </tr>
   </thead>
   <tbody>
@@ -27,7 +28,12 @@
         <td><%= question.category.name %></td>
         <td><%= question.title %></td>
         <td><%= question.content %></td>
-        <td><%= question.status ? "終了" : "受付中" %></td>       
+        <td><%= question.status ? "終了" : "受付中" %></td> 
+        <td>
+        <% if user_signed_in? && current_user && current_user.favorited?(question) %>        
+          お気に入り        
+          <% end %>
+        </td>
         <td><%= link_to 'Show', question %></td>                
       </tr>                                    
     <% end %>      

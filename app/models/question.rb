@@ -4,6 +4,7 @@ class Question < ApplicationRecord
   belongs_to :status, optional: true  
   has_many :answers, dependent: :destroy  
   has_many :favorites, dependent: :destroy
+  has_many :users, through: :favorites
   validates :title, presence: true
   validates :content, presence: true
 

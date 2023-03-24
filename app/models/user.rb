@@ -4,4 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :trackable, :validatable, :confirmable    
   has_many :questions
+  has_many :favorites
+  has_many :favorite_questions, through: :favorites, source: :question  
+
+  def favorited?(question)
+    favorites.exists?(question_id: question.id)
+  end
+
 end
