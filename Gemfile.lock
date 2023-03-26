@@ -293,6 +293,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   letter_opener_web
   listen (~> 3.3)
+  orm_adapter
   pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
