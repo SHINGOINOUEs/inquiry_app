@@ -11,4 +11,7 @@ class User < ApplicationRecord
     favorites.exists?(question_id: question.id)
   end
 
+  has_many :answers
+  has_many :useful_answers, dependent: :destroy
+
 end
