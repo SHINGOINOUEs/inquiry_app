@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   resources :users
   
   namespace :admin do
-    resources :users, only: [:index, :show]
+    resources :users, only: [:index, :show]  
+    resources :categories, only: [:new, :create]    
   end
 
   resources :favorites, only: [:create, :destroy]
