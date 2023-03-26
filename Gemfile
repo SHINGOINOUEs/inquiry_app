@@ -76,3 +76,5 @@ end
 gem 'ransack'
 
 gem 'bootstrap'
+
+gem 'orm_adapter'
