@@ -11,30 +11,22 @@
   </head>
 
   <body>
-  <header>
-    <div class="header-nav">
-      <nav>
-        <ul>
-            <li><%= link_to "Home", root_path %></li>
-          <% if user_signed_in? %>
-            <li><%= link_to "質問投稿", questions_path %></li>
-            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to "新規登録", new_user_registration_path %></li>
-            <li><%= link_to "ログイン", new_user_session_path %></li>
-          <% end %>
-            <li><%= link_to "質問一覧", questions_path %></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-<% if notice %>
-<p class="alert alert-notice"><%= notice %></p>
-<% end %>
-<% if alert %>
-<p class="alert alert-error"><%= alert %></p>
-<% end %>
+    <% if user_signed_in? %>
+      <%= link_to "質問投稿", blogs_path %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "新規登録", new_user_registration_path %>
+      <%= link_to "ログイン", new_user_session_path %>
+    <% end %>
+
+    <% if notice %>
+      <p class="alert alert-notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-error"><%= alert %></p>
+    <% end %>
+    
 
     <%= yield %>
   </body>

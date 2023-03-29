@@ -62,19 +62,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'rexml'
 
-gem 'devise'
-gem 'devise-i18n'
-
-gem 'rails_admin'
-
-gem 'cancancan'
 
 group :development do
   gem 'letter_opener_web'
 end
 
-gem 'ransack'
 
-gem 'bootstrap'
-
-gem 'orm_adapter'
+gem 'devise-i18n'
