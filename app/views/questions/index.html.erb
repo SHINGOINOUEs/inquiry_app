@@ -1,0 +1,45 @@
+
+<h1>質問一覧</h1>
+
+<%= search_form_for @q do |f| %>
+  <%= f.label :title_cont, "Title" %>
+  <%= f.search_field :title_cont %>
+  <%= f.label :content_cont, "Content" %>
+  <%= f.search_field :content_cont %>
+  <%= f.submit "Search" %>
+<% end %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>質問方</th>
+      <th>カテゴリー</th>
+      <th>タイトル</th>
+      <th>内容</th>
+      <th>ステータス</th>  
+      <th>お気に入り</th>              
+      <th>質問詳細ページ</th>                            
+    </tr>
+  </thead>
+  <tbody>
+    <% @questions.each_with_index do |question, index| %>        
+      <tr>
+        <td><%= index + 1 %></td>  
+        <td><%= question.user.name %></td>
+        <td><%= question.category.name %></td>
+        <td><%= question.title %></td>
+        <td><%= question.content %></td>
+        <td><%= question.status ? "終了" : "受付中" %></td> 
+        <td>
+        <% if user_signed_in? && current_user && current_user.favorited?(question) %>        
+          お気に入り        
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', question %></td>                
+      </tr>                                    
+    <% end %>      
+  </tbody>    
+</table>
+
+<%= link_to '新たに質問する', new_question_path %>
