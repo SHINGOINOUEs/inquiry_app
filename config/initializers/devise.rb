@@ -14,7 +14,9 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
+
   # config.secret_key = '47fe17fde18d98f1ff8ac96406a394444f01756e8c3552512a499e2db6d6b56bba37f7785db8e7faed47a40ab9e50b098bbbeb54a235c7ec8c6ea0738ccea3bc'
+
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -127,6 +129,7 @@ Devise.setup do |config|
 
   # Set up a pepper to generate the hashed password.
   # config.pepper = '2f83d22033baa4d840d7050af06fbabdecbf89c2840337bd733615a72665f06d20639bc879cdba9e38460f4db156cdf37f0421a76d7ec634941b331c181be466'
+
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -244,7 +247,9 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
+
   # config.scoped_views = false
+
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
@@ -310,4 +315,5 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+
 end
