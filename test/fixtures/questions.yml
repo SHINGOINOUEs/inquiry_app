@@ -3,11 +3,14 @@
 one:
   title: MyString
   content: MyText
+
   category: one
   user: one
+
 
 two:
   title: MyString
   content: MyText
+
   category: two
   user: two
