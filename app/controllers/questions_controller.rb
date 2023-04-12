@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all.includes(:user)
+
     @q = Question.ransack(params[:q])
     @questions = @q.result(distinct: true)
   end
@@ -57,5 +58,5 @@ class QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(:category_id, :title, :content)
   end  
-    
+
 end
