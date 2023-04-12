@@ -1,10 +1,9 @@
-class QuestionController < ApplicationController
+class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user! 
 
   def index
     @questions = Question.all.includes(:user)
-
     @q = Question.ransack(params[:q])
     @questions = @q.result(distinct: true)
   end
