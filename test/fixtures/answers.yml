@@ -3,9 +3,9 @@
 one:
   content: MyText
   question: one
-  user: one
+
 
 two:
   content: MyText
   question: two
-  user: two
+

@@ -4,14 +4,15 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :name %> <br />
-    <%= f.text_field :name %>
+
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :branch %> <br />
-    <%= f.text_field :branch %>
-  </div>  
+    <%= f.label :branch %><br />
+    <%= f.text_field :branch, autofocus: true %>
+  </div>
 
   <div class="field">
 
