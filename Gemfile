@@ -55,7 +55,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'devise'
+
 gem 'rexml'
 
 group :development do
@@ -64,8 +64,10 @@ end
 
 gem 'devise-i18n'
 
-gem 'rails_admin'
+gem 'rails_admin', '~> 3.0'
 
-gem 'cancancan'
+gem 'devise', '~> 4.3'
+
+gem 'cancancan', '~> 1.15.0'
 
 gem 'ransack', '~> 2.4.2'

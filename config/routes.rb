@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users
-  resources :questions 
+  resources :questions do
+    resources :favorites, only: [:create, :destroy]
+    resources :useful_answers, only: [:create, :destroy]    
+  end
 
 end

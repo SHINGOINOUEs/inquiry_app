@@ -1,0 +1,2 @@
+module UsefulAnswersHelper
+end

@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_10_072100) do
+ActiveRecord::Schema.define(version: 2023_04_13_043806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.text "content"
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_favorites_on_question_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
 
   create_table "questions", force: :cascade do |t|
     t.string "title"
@@ -23,6 +40,15 @@ ActiveRecord::Schema.define(version: 2023_04_10_072100) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "status", default: false, null: false
     t.index ["user_id"], name: "index_questions_on_user_id"
+  end
+
+  create_table "useful_answers", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_useful_answers_on_question_id"
+    t.index ["user_id"], name: "index_useful_answers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,5 +76,10 @@ ActiveRecord::Schema.define(version: 2023_04_10_072100) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "favorites", "questions"
+  add_foreign_key "favorites", "users"
   add_foreign_key "questions", "users"
+  add_foreign_key "useful_answers", "questions"
+  add_foreign_key "useful_answers", "users"
 end
